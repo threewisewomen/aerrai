@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/aerrai-website",
+            "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -24,14 +26,23 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/data",
+                "output": "/assets/data"
               }
             ],
             "styles": [
               "src/styles.scss"
             ]
+              ,
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/styles"
+                ]
+              }
           },
           "configurations": {
             "production": {
@@ -94,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "cb2f9707-0b29-42fd-bfcf-a8c61d694d5f"
   }
 }

@@ -1,0 +1,133 @@
+<!-- TODO: Add form validation and submission handling (Phase 3) -->
+<!-- TODO: Implement success/error states with animations -->
+<!-- TODO: Add accessibility labels and keyboard navigation -->
+<!-- TODO: Connect to company service for dynamic contact information -->
+
+<section id="contact" class="py-20 px-4">
+  <div class="container mx-auto">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <!-- TODO: Make section title configurable via admin portal -->
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Ready to Transform Your Business?
+      </h2>
+      <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+        Discover how our advanced technology solutions can revolutionize your operations and drive unprecedented growth.
+      </p>
+    </div>
+
+    <!-- Contact Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      
+      <!-- Contact Information -->
+      <!-- TODO: Make contact info dynamic from company service -->
+      <div class="glass-effect rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+        
+        <!-- Contact Methods -->
+        <div class="space-y-6">
+          <!-- Email -->
+          <div class="flex items-center space-x-4">
+            <mat-icon class="text-aerrai-secondary">email</mat-icon>
+            <div>
+              <div class="text-white/60 text-sm">Email</div>
+              <a href="mailto:{{ contactInfo.email }}" 
+                 class="text-white hover:text-aerrai-secondary transition-colors duration-300">
+                {{ contactInfo.email }}
+              </a>
+            </div>
+          </div>
+          
+          <!-- Phone -->
+          <div class="flex items-center space-x-4">
+            <mat-icon class="text-aerrai-secondary">phone</mat-icon>
+            <div>
+              <div class="text-white/60 text-sm">Phone</div>
+              <a href="tel:{{ contactInfo.phone }}" 
+                 class="text-white hover:text-aerrai-secondary transition-colors duration-300">
+                {{ contactInfo.phone }}
+              </a>
+            </div>
+          </div>
+          
+          <!-- Location -->
+          <div class="flex items-center space-x-4">
+            <mat-icon class="text-aerrai-secondary">location_on</mat-icon>
+            <div>
+              <div class="text-white/60 text-sm">Location</div>
+              <div class="text-white">{{ contactInfo.address }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Request CTA -->
+      <!-- TODO: Replace with actual form in Phase 3 -->
+      <div class="glass-effect rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-white mb-6">Request a Demo</h3>
+        
+        <!-- Success State -->
+        <div *ngIf="formSubmitted" class="text-center py-8">
+          <mat-icon class="text-green-400 text-5xl mb-4">check_circle</mat-icon>
+          <h4 class="text-white text-xl font-semibold mb-4">Thank You!</h4>
+          <p class="text-white/80">
+            We'll get back to you within 24 hours to schedule your personalized demo.
+          </p>
+        </div>
+        
+        <!-- Demo Request Form Placeholder -->
+        <div *ngIf="!formSubmitted">
+          <p class="text-white/80 mb-8">
+            Ready to see our technology suites in action? Request a personalized demo tailored to your business needs.
+          </p>
+          
+          <!-- TODO: Implement actual form fields in Phase 3 -->
+          <div class="space-y-6 mb-8">
+            <div>
+              <label class="block text-white/80 text-sm font-medium mb-2">Full Name</label>
+              <div class="glass-subtle rounded-lg p-4 text-white/60">
+                [Form field - Phase 3]
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-white/80 text-sm font-medium mb-2">Business Email</label>
+              <div class="glass-subtle rounded-lg p-4 text-white/60">
+                [Form field - Phase 3]
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-white/80 text-sm font-medium mb-2">Company</label>
+              <div class="glass-subtle rounded-lg p-4 text-white/60">
+                [Form field - Phase 3]
+              </div>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <button class="cta-button w-full text-lg py-4"
+                  (click)="requestDemo()"
+                  [disabled]="isSubmitting">
+            
+            <!-- Loading State -->
+            <span *ngIf="isSubmitting" class="flex items-center justify-center">
+              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Processing...
+            </span>
+            
+            <!-- Default State -->
+            <span *ngIf="!isSubmitting">
+              Request Your Demo
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

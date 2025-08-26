@@ -1,1 +1,494 @@
-/* You can add global styles to this file, and also import other style files */
+// Angular Material Theme Configuration
+@use '@angular/material' as mat;
+
+// Tailwind CSS Imports - MUST come after Angular Material
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Google Fonts Import
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Angular Material Theme Setup
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+// ===== AERRAI DEEP SPACE FOUNDATION =====
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+// Override Angular Material body styles with Aerrai deep space theme
+body {
+  margin: 0 !important; // Override Angular Material
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #ffffff !important; // Pure white text
+  font-weight: 400;
+  line-height: 1.6;
+  
+  // Deep space gradient background
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%) !important;
+  background-attachment: fixed;
+  
+  // Override Material's color-scheme
+  color-scheme: dark !important;
+}
+
+// ===== TEXT HIERARCHY FOR DARK THEME =====
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.text-primary {
+  color: #ffffff !important;
+}
+
+.text-secondary {
+  color: #f1f5f9 !important;
+}
+
+.text-muted {
+  color: #cbd5e1 !important;
+}
+
+.text-subtle {
+  color: #94a3b8 !important;
+}
+
+// ===== GLASS MORPHISM COMPONENTS =====
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  color: #ffffff;
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.5);
+  color: #ffffff;
+}
+
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.2);
+  color: #f1f5f9;
+}
+
+// Tailwind glass effect utility with enhanced text
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  box-shadow: 
+    inset 0 0 0 rgba(255, 255, 255, 0.1),
+    0 4px 24px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  
+  // Enhanced text inside glass elements
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+  
+  p {
+    color: #e2e8f0;
+  }
+  
+  .text-muted {
+    color: #cbd5e1;
+  }
+}
+
+// ===== CONSTELLATION BACKGROUND =====
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.7), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: constellation 200s linear infinite;
+}
+
+.star-field::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, rgba(27, 39, 53, 0.8) 0%, rgba(9, 10, 15, 0.95) 100%);
+}
+
+// Enhanced stars background utility
+.stars-bg {
+  background-image: 
+    radial-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.3) 2px, transparent 2px),
+    radial-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.15) 2px, transparent 2px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+}
+
+// ===== AERRAI BRANDING =====
+.aerrai-logo {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.3));
+}
+
+.aerrai-tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+// ===== TECH SUITE CARDS =====
+.tech-suite-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.5s ease;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  
+  // Enhanced text contrast within cards
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  p {
+    color: #e2e8f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-subtitle {
+    color: #cbd5e1;
+    font-weight: 500;
+  }
+  
+  .card-description {
+    color: #e2e8f0;
+    line-height: 1.6;
+  }
+}
+
+.tech-suite-card:hover {
+  transform: scale(1.02); // Reduced scale for better UX
+  box-shadow: 0 20px 40px rgba(31, 38, 135, 0.4);
+}
+
+.tech-suite-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(79, 70, 229, 0.1) 0%, 
+    rgba(6, 182, 212, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.tech-suite-card:hover::before {
+  opacity: 1;
+}
+
+// Priority-based card styling with enhanced visibility
+.tech-suite-card.priority-critical {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 40px rgba(239, 68, 68, 0.15);
+  
+  .priority-indicator {
+    color: #fca5a5;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+  }
+}
+
+.tech-suite-card.priority-high {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.15);
+  
+  .priority-indicator {
+    color: #fbbf24;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+  }
+}
+
+.tech-suite-card.priority-medium {
+  border-color: rgba(79, 70, 229, 0.4);
+  box-shadow: 0 0 40px rgba(79, 70, 229, 0.15);
+  
+  .priority-indicator {
+    color: #8b5cf6;
+    text-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+  }
+}
+
+// ===== ENHANCED CTA BUTTONS =====
+.cta-button {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.9) 0%, rgba(6, 182, 212, 0.9) 100%);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.4);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.cta-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  color: #f1f5f9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(31, 38, 135, 0.3);
+}
+
+// ===== FORM ELEMENTS WITH HIGH CONTRAST =====
+input, textarea, select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(79, 70, 229, 0.6);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+// ===== RESPONSIVE DESIGN =====
+@media (prefers-reduced-motion: reduce) {
+  .star-field {
+    animation: none;
+  }
+  
+  .tech-suite-card {
+    transition: none;
+  }
+  
+  .tech-suite-card:hover {
+    transform: none;
+  }
+  
+  .cta-button:hover,
+  .cta-secondary:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .aerrai-logo {
+    font-size: 2rem;
+  }
+  
+  .tech-suite-card {
+    min-height: 320px;
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+// ===== ENHANCED SCROLLBAR STYLING =====
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8) 0%, rgba(6, 182, 212, 0.8) 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 1) 0%, rgba(6, 182, 212, 1) 100%);
+}
+
+// ===== ENHANCED FOCUS STATES FOR ACCESSIBILITY =====
+.focus-visible,
+*:focus-visible {
+  outline: 2px solid rgba(79, 70, 229, 0.8);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+}
+
+// ===== UTILITY CLASSES FOR TEXT CONTRAST =====
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.text-sharp {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bg-glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+// ===== KEYFRAME ANIMATIONS =====
+@keyframes constellation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(79, 70, 229, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(79, 70, 229, 0.8), 0 0 30px rgba(6, 182, 212, 0.5); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

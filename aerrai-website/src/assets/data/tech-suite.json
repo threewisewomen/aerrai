@@ -1,0 +1,144 @@
+{
+  "company": {
+    "name": "aerrai",
+    "tagline": "next is now",
+    "theme": "deep-space"
+  },
+  "techSuites": [
+    {
+      "id": "taas",
+      "title": "Technology as a Service",
+      "subtitle": "(TaaS)",
+      "icon": "cloud_sync",
+      "priority": "high",
+      "description": "Harness the power of Technology as a Service in your business, forgoing the hassle of hiring and managing in-house teams for your end-to-end technology needs.",
+      "keyBenefits": [
+        "End-to-end technology solutions",
+        "No in-house team management required",
+        "Scalable technology infrastructure",
+        "Cost-effective service model"
+      ],
+      "features": [
+        {
+          "title": "Complete Tech Stack Management",
+          "description": "From development to deployment and maintenance"
+        },
+        {
+          "title": "Expert Team Access",
+          "description": "Tap into specialized skills without hiring overhead"
+        },
+        {
+          "title": "Scalable Solutions",
+          "description": "Technology that grows with your business needs"
+        },
+        {
+          "title": "24/7 Support",
+          "description": "Round-the-clock technical support and monitoring"
+        }
+      ],
+      "domains": [
+        "Software Development",
+        "Cloud Infrastructure",
+        "DevOps & Automation",
+        "System Integration",
+        "Technical Support"
+      ],
+      "cta": {
+        "primary": "Request TaaS Demo",
+        "secondary": "Learn More"
+      }
+    },
+    {
+      "id": "dac",
+      "title": "Data Analytics Console",
+      "subtitle": "(DAC)",
+      "icon": "analytics",
+      "priority": "medium",
+      "description": "Explore customized metrics tailored to your business needs to identify opportunities and inefficiencies across domains like finance, operations and procurement.",
+      "keyBenefits": [
+        "Customized business metrics",
+        "Cross-domain analytics",
+        "Opportunity identification",
+        "Inefficiency detection"
+      ],
+      "features": [
+        {
+          "title": "Custom Dashboard Creation",
+          "description": "Tailored metrics that matter to your business"
+        },
+        {
+          "title": "Multi-Domain Analytics",
+          "description": "Finance, operations, and procurement insights in one place"
+        },
+        {
+          "title": "Opportunity Detection",
+          "description": "AI-powered identification of growth opportunities"
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "Data-driven recommendations for efficiency improvements"
+        }
+      ],
+      "domains": [
+        "Financial Analytics",
+        "Operational Metrics",
+        "Procurement Intelligence",
+        "Performance Dashboards",
+        "Predictive Analytics"
+      ],
+      "cta": {
+        "primary": "Request DAC Demo",
+        "secondary": "View Analytics"
+      }
+    },
+    {
+      "id": "fsc",
+      "title": "Finance and Strategy Consulting",
+      "subtitle": "Expert Advisory Services",
+      "icon": "trending_up",
+      "priority": "critical",
+      "description": "Get a fresh set of eyes to assess, analyse and address your business challenges with our suite of consultants with experience across management, finance, supply chain and IT.",
+      "keyBenefits": [
+        "Expert business assessment",
+        "Multi-domain expertise",
+        "Strategic problem solving",
+        "Fresh perspective on challenges"
+      ],
+      "features": [
+        {
+          "title": "Business Assessment",
+          "description": "Comprehensive evaluation of your current operations"
+        },
+        {
+          "title": "Strategic Planning",
+          "description": "Long-term roadmaps for sustainable growth"
+        },
+        {
+          "title": "Financial Optimization",
+          "description": "Cost reduction and revenue enhancement strategies"
+        },
+        {
+          "title": "Cross-Domain Solutions",
+          "description": "Integrated approach across all business functions"
+        }
+      ],
+      "domains": [
+        "Management Consulting",
+        "Financial Strategy",
+        "Supply Chain Optimization",
+        "IT Strategy & Governance",
+        "Business Process Improvement"
+      ],
+      "cta": {
+        "primary": "Request Consultation",
+        "secondary": "Meet Our Experts"
+      }
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-08-26",
+    "totalSuites": 3,
+    "featuredSuite": "taas"
+  }
+}

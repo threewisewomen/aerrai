@@ -1,0 +1,60 @@
+// TODO: Add scroll-based background opacity changes
+// TODO: Implement mobile menu slide-down animation
+// TODO: Add hover effects for navigation links
+// TODO: Optimize for mobile touch interactions
+
+header {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+  // TODO: Add dynamic transparency based on scroll position
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// TODO: Enhanced logo hover effects
+.aerrai-logo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    // TODO: Add subtle glow effect on hover
+    filter: drop-shadow(0 0 15px rgba(79, 70, 229, 0.4));
+  }
+}
+
+// TODO: Navigation link hover animations
+nav a {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// TODO: Mobile menu animations
+.mobile-menu {
+  // TODO: Implement slide-down animation
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,78 @@
+// TODO: Add configurable grid layouts (2x2, 3x1, 3x3) via admin portal
+// TODO: Implement masonry layout option for varied card heights
+// TODO: Add grid animation entrance effects
+// TODO: Optimize grid spacing for all device sizes
+
+#tech-suites {
+  position: relative;
+  background: transparent;
+}
+
+// TODO: Add staggered animation for grid items
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+// TODO: Make grid responsive configuration admin-controllable
+.grid {
+  // Enhanced responsive grid with better mobile spacing
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (min-width: 1025px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+// TODO: Add section entrance animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// TODO: Add section header animations
+.section-header {
+  h2 {
+    animation: titleSlideIn 1s ease-out forwards;
+  }
+  
+  p {
+    animation: subtitleFadeIn 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes titleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtitleFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

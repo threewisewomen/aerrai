@@ -1,0 +1,55 @@
+<!-- TODO: Add page-level loading state -->
+<!-- TODO: Implement section management from layout service -->
+<!-- TODO: Add SEO meta tags management -->
+<!-- TODO: Connect to analytics tracking service -->
+
+<div class="homepage-container">
+
+  <!-- Constellation Background (Fixed) -->
+  <!-- TODO: Make background configurable via admin portal -->
+  <app-constellation-background></app-constellation-background>
+
+  <!-- Fixed Header -->
+  <!-- TODO: Add header visibility control based on scroll position -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="relative z-10">
+    
+    <!-- Hero Section -->
+    <!-- TODO: Add section visibility control from layout service -->
+    <app-hero-section></app-hero-section>
+
+    <!-- Tech Suites Grid Section -->
+    <!-- TODO: Add intersection observer for scroll animations -->
+    <app-tech-suite-grid></app-tech-suite-grid>
+
+    <!-- Contact Section -->
+    <!-- TODO: Add section configuration from layout service -->
+    <app-contact-section></app-contact-section>
+
+  </main>
+
+  <!-- Footer -->
+  <!-- TODO: Create footer component with company info and links -->
+  <footer class="relative z-10 py-8 px-4 border-t border-white/10">
+    <div class="container mx-auto text-center">
+      <div class="glass-subtle rounded-lg p-6">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+          <span class="aerrai-logo text-xl">aerrai</span>
+          <span class="aerrai-tagline">next is now</span>
+        </div>
+        <p class="text-white/60 text-sm">
+          © 2025 Aerrai. Transforming businesses through advanced technology solutions.
+        </p>
+        <!-- TODO: Add social media links and legal pages -->
+        <div class="mt-4 space-x-6">
+          <a href="#" class="text-white/60 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="text-white/60 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+          <a href="/admin-portal" class="text-white/40 hover:text-white/60 text-xs transition-colors duration-300">Admin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>

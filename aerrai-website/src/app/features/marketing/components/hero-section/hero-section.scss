@@ -1,0 +1,86 @@
+// TODO: Add scroll-based parallax effects
+// TODO: Implement mouse-following particle system
+// TODO: Add responsive typography scaling
+// TODO: Optimize animations for mobile performance
+
+#hero {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+// TODO: Enhanced logo animations
+.aerrai-logo {
+  animation: glow 3s ease-in-out infinite alternate;
+  
+  &:hover {
+    // TODO: Add interactive hover effects
+    animation-duration: 1s;
+  }
+}
+
+// TODO: Add entrance animations for hero content
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+// TODO: Implement responsive animation keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% { 
+    text-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+  }
+  100% { 
+    text-shadow: 
+      0 0 20px rgba(79, 70, 229, 0.8), 
+      0 0 30px rgba(6, 182, 212, 0.5),
+      0 0 40px rgba(79, 70, 229, 0.3);
+  }
+}
+
+// TODO: Add responsive breakpoints for all screen sizes
+@media (max-width: 640px) {
+  .aerrai-logo {
+    font-size: 3rem;
+  }
+  
+  .hero-decoration {
+    // TODO: Simplify animations for mobile performance
+    display: none;
+  }
+}
+
+// TODO: Add tablet-specific optimizations
+@media (min-width: 641px) and (max-width: 1024px) {
+  .aerrai-logo {
+    font-size: 4rem;
+  }
+}

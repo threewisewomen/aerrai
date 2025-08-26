@@ -1,0 +1,77 @@
+<!-- TODO: Add dynamic background transparency based on scroll position -->
+<!-- TODO: Implement mobile-first responsive navigation -->
+<!-- TODO: Add accessibility labels and keyboard navigation -->
+
+<header class="fixed top-0 w-full z-50 glass-subtle transition-all duration-300">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      
+      <!-- Aerrai Logo and Branding -->
+      <!-- TODO: Make logo clickable to scroll to top -->
+      <!-- TODO: Add logo animation on hover -->
+      <div class="flex items-center space-x-3">
+        <div class="aerrai-logo text-2xl">aerrai</div>
+        <div class="aerrai-tagline hidden sm:block">next is now</div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <!-- TODO: Highlight active section based on scroll position -->
+      <!-- TODO: Add smooth scroll navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#hero" (click)="scrollToSection('hero')" 
+           class="text-white/80 hover:text-white transition-colors duration-300">
+          Home
+        </a>
+        <a href="#tech-suites" (click)="scrollToSection('tech-suites')" 
+           class="text-white/80 hover:text-white transition-colors duration-300">
+          Solutions
+        </a>
+        <a href="#contact" (click)="scrollToSection('contact')" 
+           class="text-white/80 hover:text-white transition-colors duration-300">
+          Contact
+        </a>
+        
+        <!-- TODO: Replace with functional demo request -->
+        <button class="cta-button text-sm px-6 py-2">
+          Request Demo
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <!-- TODO: Add hamburger animation -->
+      <!-- TODO: Implement mobile menu overlay -->
+      <button 
+        class="md:hidden text-white p-2"
+        (click)="toggleMenu()"
+        aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <!-- TODO: Add slide-down animation -->
+    <!-- TODO: Add backdrop blur overlay -->
+    <nav *ngIf="isMenuOpen" class="md:hidden mt-4 pb-4 border-t border-white/20">
+      <div class="flex flex-col space-y-4 pt-4">
+        <a href="#hero" (click)="scrollToSection('hero'); toggleMenu()" 
+           class="text-white/80 hover:text-white transition-colors duration-300">
+          Home
+        </a>
+        <a href="#tech-suites" (click)="scrollToSection('tech-suites'); toggleMenu()" 
+           class="text-white/80 hover:text-white transition-colors duration-300">
+          Solutions
+        </a>
+        <a href="#contact" (click)="scrollToSection('contact'); toggleMenu()" 
+           class="text-white/80 hover:text-white transition-colors duration-300">
+          Contact
+        </a>
+        <button class="cta-button text-sm px-6 py-2 w-full">
+          Request Demo
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
